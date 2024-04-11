@@ -34,7 +34,7 @@ a Pyramid-type Encoding Pillar Feature Encoder (PE-PFE) design to help the featu
 | Success   | 47.12 | 34.18 | 54.82  | 57.70   | 44.68| 44.59 |
 | Precision | 57.72 | 64.93 | 54.41  | 54.63   | 40.73| 58.86 |
 
-<img src="doc/visualjpg"  />
+<img src="doc/visual.jpg"  />
 ## Setup
 
 ### Installation
