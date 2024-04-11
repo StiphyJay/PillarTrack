@@ -106,7 +106,7 @@ For now, the code does not support ddp eval.
 
 ## Acknowledgment
 
-- This repo is built upon [smat](https://github.com/3bobo/smat), [Open3DSOT](https://github.com/Ghostish/Open3DSOT) and [OpenPCDet](https://github.com/open-mmlab/OpenPCDet).  
+- This repo is built upon [SMAT](https://github.com/3bobo/smat), [Open3DSOT](https://github.com/Ghostish/Open3DSOT) and [OpenPCDet](https://github.com/open-mmlab/OpenPCDet).  
 - Thank [traveller59](https://github.com/traveller59) for his implementation of [Spconv](https://github.com/traveller59/spconv).
 - Thank [fundamentalvision](https://github.com/fundamentalvision) for his implementation of [Deformable-DETR](https://github.com/fundamentalvision/Deformable-DETR).
 <!-- ## Citation
