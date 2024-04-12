@@ -10,7 +10,7 @@
 
 ## Introduction
 
-This is the official code release of the paper [arxiv](http://arxiv.org/abs/2404.07495) "**PillarTrack: Redesigning Pillar-based Transformer Network for Single Object Tracking on Point Clouds**"
+This is the official code release of the paper [PillarTrack: Redesigning Pillar-based Transformer Network for Single Object Tracking on Point Clouds](http://arxiv.org/abs/2404.07495) 
 
 ### Abstract
 LiDAR-based 3D single object tracking (3D SOT) is a critical issue in robotics and autonomous driving. It aims to obtain accurate 3D BBox from the search area based on similarity or motion. However, existing 3D SOT methods usually follow the point-based pipeline, where the sampling operation inevitably leads to redundant or lost information, resulting in unexpected performance. To address these issues, we propose PillarTrack, a pillar-based 3D single object tracking framework. Firstly, we transform sparse point clouds into dense pillars to preserve the local and global geometrics. Secondly, we introduce
