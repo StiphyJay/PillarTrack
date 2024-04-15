@@ -110,18 +110,15 @@ For now, the code does not support ddp eval.
 - This repo is built upon [SMAT](https://github.com/3bobo/smat), [Open3DSOT](https://github.com/Ghostish/Open3DSOT) and [OpenPCDet](https://github.com/open-mmlab/OpenPCDet).  
 - Thank [traveller59](https://github.com/traveller59) for his implementation of [Spconv](https://github.com/traveller59/spconv).
 - Thank [fundamentalvision](https://github.com/fundamentalvision) for his implementation of [Deformable-DETR](https://github.com/fundamentalvision/Deformable-DETR).
-<!-- ## Citation
+## Citation
 
 If you find the project useful for your research, you may cite,
 
 ```
-@ARTICLE{smat,
-  author={Cui, Yubo and Shan, Jiayao and Gu, Zuoxu and Li, Zhiheng and Fang, Zheng},
-  journal={IEEE Robotics and Automation Letters}, 
-  title={Exploiting More Information in Sparse Point Cloud for 3D Single Object Tracking}, 
-  year={2022},
-  volume={7},
-  number={4},
-  pages={11926-11933},
-  doi={10.1109/LRA.2022.3208687}}
-``` -->
+@article{xu2024pillartrack,
+  title={PillarTrack: Redesigning Pillar-based Transformer Network for Single Object Tracking on Point Clouds},
+  author={Xu, Weisheng and Zhou, Sifan and Yuan, Zhihang},
+  journal={arXiv preprint arXiv:2404.07495},
+  year={2024}
+}
+```
