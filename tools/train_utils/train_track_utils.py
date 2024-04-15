@@ -5,10 +5,10 @@ import torch
 from torch import autograd
 import tqdm
 from torch.nn.utils import clip_grad_norm_
-from smat.ops.iou3d_nms import iou3d_nms_utils
-from smat.utils import box_utils
+from pillartrack.ops.iou3d_nms import iou3d_nms_utils
+from pillartrack.utils import box_utils
 
-from smat.models import build_network, load_data_to_gpu
+from pillartrack.models import build_network, load_data_to_gpu
 import numpy as np
 import time
 
@@ -148,8 +148,8 @@ def checkpoint_state(model=None, optimizer=None, epoch=None, it=None):
         model_state = None
 
     try:
-        import smat
-        version = 'smat+' + smat.__version__
+        import pillartrack
+        version = 'pillartrack+' + pillartrack.__version__
     except:
         version = 'none'
 

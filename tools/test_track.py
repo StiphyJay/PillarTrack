@@ -11,10 +11,10 @@ import torch
 from tensorboardX import SummaryWriter
 
 from eval_utils import eval_track_utils
-from smat.config import cfg, cfg_from_list, cfg_from_yaml_file, log_config_to_file
-from smat.datasets import build_dataloader
-from smat.models import build_network
-from smat.utils import common_utils
+from pillartrack.config import cfg, cfg_from_list, cfg_from_yaml_file, log_config_to_file
+from pillartrack.datasets import build_dataloader
+from pillartrack.models import build_network
+from pillartrack.utils import common_utils
 
 def parse_config():
     parser = argparse.ArgumentParser(description='arg parser')

@@ -11,10 +11,10 @@ import torch.nn as nn
 from torch import autograd
 from tensorboardX import SummaryWriter
 
-from smat.config import cfg, cfg_from_list, cfg_from_yaml_file, log_config_to_file
-from smat.datasets import build_dataloader
-from smat.models import build_network, model_fn_decorator
-from smat.utils import common_utils
+from pillartrack.config import cfg, cfg_from_list, cfg_from_yaml_file, log_config_to_file
+from pillartrack.datasets import build_dataloader
+from pillartrack.models import build_network, model_fn_decorator
+from pillartrack.utils import common_utils
 from train_utils.optimization import build_optimizer, build_scheduler
 from train_utils.train_track_utils import train_model
 

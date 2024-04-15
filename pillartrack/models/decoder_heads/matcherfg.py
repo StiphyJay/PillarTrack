@@ -13,7 +13,7 @@ Modules to compute the matching cost and solve the corresponding LSAP.
 import torch
 from scipy.optimize import linear_sum_assignment
 from torch import nn, squeeze
-from smat.ops.iou3d_nms import iou3d_nms_utils
+from pillartrack.ops.iou3d_nms import iou3d_nms_utils
 
 class HungarianMatcherFG(nn.Module):
     """This class computes an assignment between the targets and the predictions of the network

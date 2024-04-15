@@ -121,8 +121,8 @@ def checkpoint_state(model=None, optimizer=None, epoch=None, it=None):
         model_state = None
 
     try:
-        import smat
-        version = 'smat+' + smat.__version__
+        import pillartrack
+        version = 'pillartrack+' + pillartrack.__version__
     except:
         version = 'none'
 

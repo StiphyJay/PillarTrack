@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import copy
-from smat.ops.iou3d_nms import iou3d_nms_utils
+from pillartrack.ops.iou3d_nms import iou3d_nms_utils
 
 
 def sigmoid_focal_loss(inputs, targets, num_boxes, alpha: float = 0.25, gamma: float = 2):

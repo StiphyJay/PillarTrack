@@ -6,8 +6,8 @@ import torch
 import tqdm
 from shapely.geometry import Polygon
 
-from smat.models import load_data_to_gpu
-from smat.utils import common_utils
+from pillartrack.models import load_data_to_gpu
+from pillartrack.utils import common_utils
 
 class AverageMeter(object):
     """Computes and stores the average and current value"""

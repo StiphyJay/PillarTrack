@@ -29,12 +29,12 @@ def write_version_to_file(version, target_file):
 
 if __name__ == '__main__':
     version = '0.1.0+%s' % get_git_commit_number()
-    write_version_to_file(version, 'smat/version.py')
+    write_version_to_file(version, 'pillartrack/version.py')
 
     setup(
-        name='smat',
+        name='pillartrack',
         version=version,
-        description='The official pytorch implement of smat',
+        description='The official pytorch implement of pillartrack',
         install_requires=[
             'numpy',
             'torch>=1.1',
@@ -52,7 +52,7 @@ if __name__ == '__main__':
         ext_modules=[
             make_cuda_ext(
                 name='iou3d_nms_cuda',
-                module='smat.ops.iou3d_nms',
+                module='pillartrack.ops.iou3d_nms',
                 sources=[
                     'src/iou3d_cpu.cpp',
                     'src/iou3d_nms_api.cpp',
@@ -62,7 +62,7 @@ if __name__ == '__main__':
             ),
             make_cuda_ext(
                 name='roiaware_pool3d_cuda',
-                module='smat.ops.roiaware_pool3d',
+                module='pillartrack.ops.roiaware_pool3d',
                 sources=[
                     'src/roiaware_pool3d.cpp',
                     'src/roiaware_pool3d_kernel.cu',
@@ -70,7 +70,7 @@ if __name__ == '__main__':
             ),
             make_cuda_ext(
                 name='roipoint_pool3d_cuda',
-                module='smat.ops.roipoint_pool3d',
+                module='pillartrack.ops.roipoint_pool3d',
                 sources=[
                     'src/roipoint_pool3d.cpp',
                     'src/roipoint_pool3d_kernel.cu',
@@ -78,7 +78,7 @@ if __name__ == '__main__':
             ),
             make_cuda_ext(
                 name='pointnet2_stack_cuda',
-                module='smat.ops.pointnet2.pointnet2_stack',
+                module='pillartrack.ops.pointnet2.pointnet2_stack',
                 sources=[
                     'src/pointnet2_api.cpp',
                     'src/ball_query.cpp',
@@ -93,7 +93,7 @@ if __name__ == '__main__':
             ),
             make_cuda_ext(
                 name='pointnet2_batch_cuda',
-                module='smat.ops.pointnet2.pointnet2_batch',
+                module='pillartrack.ops.pointnet2.pointnet2_batch',
                 sources=[
                     'src/pointnet2_api.cpp',
                     'src/ball_query.cpp',
