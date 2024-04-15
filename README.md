@@ -112,7 +112,7 @@ For now, the code does not support ddp eval.
 - Thank [fundamentalvision](https://github.com/fundamentalvision) for his implementation of [Deformable-DETR](https://github.com/fundamentalvision/Deformable-DETR).
 ## Citation
 
-If you find the project useful for your research, you may cite,
+If you find the project useful for your research, please cite our article,
 
 ```
 @article{xu2024pillartrack,
