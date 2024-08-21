@@ -1,0 +1,98 @@
+CLASS_NAMES: ['Van']
+
+DATA_CONFIG: 
+    _BASE_CONFIG_: cfgs/dataset_configs/kittisot_dataset.yaml
+    POINT_CLOUD_RANGE: [-6.4, -6.4, -3, 6.4, 6.4, 1]
+    DATA_PROCESSOR:
+        - NAME: shuffle_points
+          SHUFFLE_ENABLED: {
+                'train': True,
+                'test': False
+          }
+
+        - NAME: transform_points_to_voxels
+          VOXEL_SIZE: [0.08, 0.08, 4]
+          MAX_POINTS_PER_VOXEL: 32
+          MAX_NUMBER_OF_VOXELS: {
+            'train': 1024,
+            'test': 1024
+          }
+
+DATA_AUGMENTOR:
+    DISABLE_AUG_LIST: ['placeholder']
+    AUG_CONFIG_LIST:
+        - NAME: random_world_flip
+          ALONG_AXIS_LIST: ['x']
+
+        - NAME: random_world_rotation  
+          WORLD_ROT_ANGLE: [-0.78539816, 0.78539816]
+        
+        - NAME: random_world_scaling
+          WORLD_SCALE_RANGE: [0.95, 1.05]
+              
+MODEL:
+    NAME: SMAT
+
+    VFE:
+        NAME: PillarVFE
+        WITH_DISTANCE: False
+        USE_ABSLOTE_XYZ: True
+        USE_NORM: True
+        NUM_FILTERS: [64]
+
+    MAP_TO_BEV:
+        NAME: PointPillarScatter
+        NUM_BEV_FEATURES: 64
+    
+    TRANSFORMER_BACKBONE:
+        NAME: PVTNetV2
+
+        FEATURE_SIZE: 128
+        NUM_HEADS: [1, 2, 5, 8]
+        DEPTHS: [3, 4, 6, 3]
+        MLP_RATIOS: [8, 8, 4, 4]
+        EMBED_DIM: [32, 64, 120, 256]
+        PATCH_SIZE: 7
+        RESHAPE: True
+    
+    NECK:
+      NAME: CrossFPNNet
+      OUT_CHANNEL: 256
+      NUM_OUT: 4
+      HEADS: 8
+      RESHAPE: True
+
+    DECODER_HEAD:
+      NAME: FusionDetr
+      TWO_STAGE: True
+      NUM_PROPOSALS: 48
+      POS_DIM: 128
+
+      NHEADS: 8
+      NLAYERS: 8
+      DIM_FFN: 2048
+      
+      MATCH_CONFIG:
+          CLASS: 2
+          BOX: 5
+          IOU: 2
+          RY: 1
+    
+      LOSS_CONFIG:
+          CLASS: 2
+          BOX: 5
+          IOU: 2
+          LOSS_REG: L1
+          LOSS_WEIGHTS: [1.0, 1.0, 1.5, 1.0, 1.0]
+
+OPTIMIZATION:
+    BATCH_SIZE_PER_GPU: 16
+    NUM_EPOCHS: 72
+    OPTIMIZER: adamw
+    LR: 0.0001
+    WEIGHT_DECAY: 0.05
+    BETAS: [0.9, 0.999]
+    DECAY_STEP: 24
+    GRAD_NORM_CLIP: 0
+    DECAY_STEP_LIST: [63, 69]
+
